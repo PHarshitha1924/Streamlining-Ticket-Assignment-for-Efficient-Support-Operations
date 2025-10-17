@@ -24,34 +24,89 @@ Platform Group: All → Groups → Platform Group → Add user: Manne Niranjan �
 Flow 1 (Regarding Certificates): Flow Designer → New Flow → Name: Regarding Certificate → Application: Global → Run As: System User → Trigger: Create/Update Record (Table: Operations Related, Condition: Issue = Regarding Certificates) → Action: Update Record (Assigned to Group = Certificates) → Save & Activate.
 Flow 2 (Regarding Platform): Flow Designer → New Flow → Name: Regarding Platform → Application: Global → Run As: System User → Trigger: Create/Update Record (Table: Operations Related, Conditions: Issue = Unable to login to platform, 404 Error, Regarding User Expired) → Action: Update Record (Assigned to Group = Platform) → Save & Activate.
 
-ABC-Ticket-Routing/
+📂 Project Structure 
+ABC-Ticket-Routing
 │
+
+
 ├── Users/
+
+
 │   ├── Katherine Pierce (Certificates Group)
+
+
 │   ├── Manne Niranjan (Platform Group)
+
+
 │
+
+
 ├── Groups/
+
+
 │   ├── Certificates Group
+
+
 │   ├── Platform Group
+
+
 │
+
+
 ├── Roles/
+
+
 │   ├── Certification_Role
+
+
 │   ├── Platform_Role
+
+
 │
+
+
 ├── Tables/
+
+
 │   ├── u_operations_related
+
+
 │   │   ├── Issue (Choice field)
+
+
 │   │   ├── Assigned to Group
+
+
 │   │   └── Other custom columns
+
+
 │
+
+
 ├── ACLs/
+
+
 │   ├── Read Access
+
+
 │   ├── Write Access
+
+
 │   ├── Field-Level Restrictions
+
+
 │
+
+
 ├── Flows/
+
+
 │   ├── Regarding Certificate → Assigns to Certificates Group
+
+
 │   └── Regarding Platform → Assigns to Platform Group
+
+
 
 
 Outcome: Automated ticket routing in ServiceNow streamlines support operations, ensures accurate ticket assignment, minimizes resolution delays, improves resource utilization, and enhances overall customer satisfaction.
