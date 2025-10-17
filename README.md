@@ -12,7 +12,7 @@ Objective: Implement an automated ticket routing system in ServiceNow at ABC Cor
 4. Table Creation: Open ServiceNow → All → Tables (System Definition) → New → Label: Operations Related → Enable Create module & Create mobile module → Menu Name: Operations Related → Add required columns → Submit.
 
 
-Choices for Issue field: Unable to login to platform, 404 Error, Regarding Certificates, Regarding User Expired.
+  Choices for Issue field: Unable to login to platform, 404 Error, Regarding Certificates, Regarding User Expired.
 
 6. Assign Roles & Users to Groups:
 Certificates Group: All → Groups → Certificates Group → Add user: Katherine Pierce → Add role: Certification_Role.
@@ -25,6 +25,8 @@ Platform Group: All → Groups → Platform Group → Add user: Manne Niranjan �
 8. Create ACL: All → Access Control (ACL) (System Security) → New → Define ACL → Requires Role: Admin → Submit → Repeat for 4 fields.
 
 9. Flow Designer – Ticket Assignment:
+
+
 Flow 1 (Regarding Certificates): Flow Designer → New Flow → Name: Regarding Certificate → Application: Global → Run As: System User → Trigger: Create/Update Record (Table: Operations Related, Condition: Issue = Regarding Certificates) → Action: Update Record (Assigned to Group = Certificates) → Save & Activate.
 
 
