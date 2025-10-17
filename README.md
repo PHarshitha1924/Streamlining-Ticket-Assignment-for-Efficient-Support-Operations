@@ -24,7 +24,11 @@ Platform Group: All → Groups → Platform Group → Add user: Manne Niranjan �
 Flow 1 (Regarding Certificates): Flow Designer → New Flow → Name: Regarding Certificate → Application: Global → Run As: System User → Trigger: Create/Update Record (Table: Operations Related, Condition: Issue = Regarding Certificates) → Action: Update Record (Assigned to Group = Certificates) → Save & Activate.
 Flow 2 (Regarding Platform): Flow Designer → New Flow → Name: Regarding Platform → Application: Global → Run As: System User → Trigger: Create/Update Record (Table: Operations Related, Conditions: Issue = Unable to login to platform, 404 Error, Regarding User Expired) → Action: Update Record (Assigned to Group = Platform) → Save & Activate.
 
+
+
 📂 Project Structure 
+
+
 ABC-Ticket-Routing
 │
 
@@ -105,6 +109,8 @@ ABC-Ticket-Routing
 
 
 │   └── Regarding Platform → Assigns to Platform Group
+
+
 
 
 
