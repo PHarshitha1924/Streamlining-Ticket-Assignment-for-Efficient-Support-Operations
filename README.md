@@ -12,13 +12,13 @@ Objective: Implement an automated ticket routing system in ServiceNow at ABC Cor
 4. Table Creation: Open ServiceNow → All → Tables (System Definition) → New → Label: Operations Related → Enable Create module & Create mobile module → Menu Name: Operations Related → Add required columns → Submit.
 
 
-       Choices for Issue field: Unable to login to platform, 404 Error, Regarding Certificates, Regarding User Expired.
+      Choices for Issue field: Unable to login to platform, 404 Error, Regarding Certificates, Regarding User Expired.
 
 6. Assign Roles & Users to Groups:
-       Certificates Group: All → Groups → Certificates Group → Add user: Katherine Pierce → Add role: Certification_Role.
+      Certificates Group: All → Groups → Certificates Group → Add user: Katherine Pierce → Add role: Certification_Role.
 
 
-       Platform Group: All → Groups → Platform Group → Add user: Manne Niranjan → Add role: Platform_Role.
+      Platform Group: All → Groups → Platform Group → Add user: Manne Niranjan → Add role: Platform_Role.
 
 7. Assign Roles to Table: All → Tables → Operations Related → Application Access → For Read and Write operations → Require Platform_Role and Certification_Role.
 
@@ -30,7 +30,7 @@ Objective: Implement an automated ticket routing system in ServiceNow at ABC Cor
       Flow 1 (Regarding Certificates): Flow Designer → New Flow → Name: Regarding Certificate → Application: Global → Run As: System User → Trigger: Create/Update Record          (Table: Operations Related, Condition: Issue = Regarding Certificates) → Action: Update Record (Assigned to Group = Certificates) → Save & Activate.
 
 
-       Flow 2 (Regarding Platform): Flow Designer → New Flow → Name: Regarding Platform → Application: Global → Run As: System User → Trigger: Create/Update Record (Table:         Operations Related, Conditions: Issue = Unable to login to platform, 404 Error, Regarding User Expired) → Action: Update Record (Assigned to Group = Platform) → Save        & Activate.
+      Flow 2 (Regarding Platform): Flow Designer → New Flow → Name: Regarding Platform → Application: Global → Run As: System User → Trigger: Create/Update Record (Table:         Operations Related, Conditions: Issue = Unable to login to platform, 404 Error, Regarding User Expired) → Action: Update Record (Assigned to Group = Platform) → Save        & Activate.
 
 
 
